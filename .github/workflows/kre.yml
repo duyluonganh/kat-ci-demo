@@ -24,5 +24,5 @@ jobs:
         uses: katalon-studio/katalon-studio-github-action@v2.1
         with:
           version: '7.8.1'
-          projectPath: 'dev_repo'
+          projectPath: '${{ github.workspace }}/dev_repo'
           args: '-noSplash -retry=0 -browserType=Chrome -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} --config -webui.autoUpdateDrivers=true'
