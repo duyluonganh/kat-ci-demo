@@ -8,13 +8,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
 
     steps:
       - name: Checkout main repo
         uses: actions/checkout@v2
-        with:
-          path: 'main'
       - name: Checkout dev repo
         uses: actions/checkout@v2
         with:
@@ -25,4 +23,4 @@ jobs:
         with:
           version: '7.8.1'
           projectPath: '${{ github.workspace }}/dev_repo'
-          args: '-noSplash -retry=0 -browserType=Chrome -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }} --config -webui.autoUpdateDrivers=true'
+          args: '-noSplash -retry=0 -browserType=Chrome -statusDelay=15 -testSuitePath="Test Suites/New Test Suite" -apiKey=${{ secrets.SECRET_KEY }}'
