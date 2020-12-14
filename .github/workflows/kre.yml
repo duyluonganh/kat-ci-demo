@@ -11,9 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout main repo
+        uses: actions/checkout@v2
         with:
-          repository: 'duyluonganh/kat-download-file'
+          path: 'main'
+      - name: Checkout dev repo
+        uses: actions/checkout@v2
+        with:
+          repository: 'duyluonganh/kat-download-file' #https://github.com/duyluonganh/kat-download-file
           path: 'dev_repo'
       - name: Katalon Studio Github Action
         uses: katalon-studio/katalon-studio-github-action@v2.1
