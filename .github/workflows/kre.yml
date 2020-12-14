@@ -12,3 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          repository: 'https://github.com/duyluonganh/kat-download-file.git'
+          path: 'repo_1'
